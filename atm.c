@@ -1,16 +1,27 @@
 #include <gtk/gtk.h>
+#include <gtk/gtkx.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
 #include <sys/types.h>
 
+static int argc;
+char *argv[];
+GtkWidget *win; 
+GtkWidget *win2;
+GtkWidget *win3_a;
+GtkWidget *win3_b;
+GtkWidget *win3_c;
+GtkWidget *win3_d;
 
-void win2 (int argc, char *argv[])
+
+
+void win2_1 (int argc, char *argv[])
 {
 gtk_init (&argc, &argv);
 GtkBuilder *builder;
 builder = gtk_builder_new_from_file ("layout1.glade");
-GtkWidget *win2 = GTK_WIDGET(gtk_builder_get_object (builder,"win2"));
+win2 = GTK_WIDGET(gtk_builder_get_object (builder,"win2"));
 g_signal_connect(win2, "destroy",G_CALLBACK(gtk_main_quit),NULL);
 gtk_builder_connect_signals(builder, NULL);
 GtkWidget *box2 = GTK_WIDGET(gtk_builder_get_object (builder,"box2"));
@@ -25,14 +36,19 @@ gtk_widget_show(win2);
 gtk_main ();
 }
 
+void next()
+{
+gtk_main_quit();
+win2_1(argc,argv);
+}
 
 
-void win3_a (int argc, char *argv[])
+void win3_a_1 (int argc, char *argv[])
 {
 gtk_init (&argc, &argv);
 GtkBuilder *builder;
 builder = gtk_builder_new_from_file ("layout1.glade");
-GtkWidget *win3_a = GTK_WIDGET(gtk_builder_get_object (builder,"win3_a"));
+win3_a = GTK_WIDGET(gtk_builder_get_object (builder,"win3_a"));
 g_signal_connect(win3_a, "destroy",G_CALLBACK(gtk_main_quit),NULL);
 gtk_builder_connect_signals(builder, NULL);
 GtkWidget *box3_a = GTK_WIDGET(gtk_builder_get_object (builder,"box3_a"));
@@ -48,13 +64,13 @@ gtk_widget_show(win3_a);
 gtk_main ();
 }
 
-void win3_b (int argc, char *argv[])
+void win3_b_1 (int argc, char *argv[])
 {
 gtk_init (&argc, &argv);
 GtkBuilder *builder;
 builder = gtk_builder_new_from_file ("layout1.glade");
-GtkWidget *win3_b = GTK_WIDGET(gtk_builder_get_object (builder,"win3_b"));
-g_signal_connect(win3_b, "destroy",G_CALLBACK(gtk_main_quit),NULL);
+win3_b = GTK_WIDGET(gtk_builder_get_object (builder,"win3_b"));
+g_signal_connect(win3_b, "destroy",G_CALLBACK(next),NULL);
 gtk_builder_connect_signals(builder, NULL);
 GtkWidget *box3_b = GTK_WIDGET(gtk_builder_get_object (builder,"box3_b"));
 GtkWidget *top = GTK_WIDGET(gtk_builder_get_object (builder,"top_lb_3_b"));
@@ -66,12 +82,12 @@ gtk_main ();
 }
 
 
-void win3_c (int argc, char *argv[])
+void win3_c_1 (int argc, char *argv[])
 {
 gtk_init (&argc, &argv);
 GtkBuilder *builder;
 builder = gtk_builder_new_from_file ("layout1.glade");
-GtkWidget *win3_c = GTK_WIDGET(gtk_builder_get_object (builder,"win3_c"));
+win3_c = GTK_WIDGET(gtk_builder_get_object (builder,"win3_c"));
 g_signal_connect(win3_c, "destroy",G_CALLBACK(gtk_main_quit),NULL);
 gtk_builder_connect_signals(builder, NULL);
 GtkWidget *box3_c = GTK_WIDGET(gtk_builder_get_object (builder,"box3_c"));
@@ -85,12 +101,12 @@ gtk_widget_show(win3_c);
 gtk_main ();
 }
 
-void win3_d (int argc, char *argv[])
+void win3_d_1 (int argc, char *argv[])
 {
 gtk_init (&argc, &argv);
 GtkBuilder *builder;
 builder = gtk_builder_new_from_file ("layout1.glade");
-GtkWidget *win3_d = GTK_WIDGET(gtk_builder_get_object (builder,"win3_d"));
+win3_d = GTK_WIDGET(gtk_builder_get_object (builder,"win3_d"));
 g_signal_connect(win3_d, "destroy",G_CALLBACK(gtk_main_quit),NULL);
 gtk_builder_connect_signals(builder, NULL);
 GtkWidget *box3_d = GTK_WIDGET(gtk_builder_get_object (builder,"box3_d"));
@@ -102,13 +118,13 @@ gtk_widget_show(win3_d);
 gtk_main ();
 }
 
-void win1 (int argc, char *argv[])
+void win1_1 (int argc, char *argv[])
 {
 gtk_init (&argc, &argv);
 GtkBuilder *builder;
 builder = gtk_builder_new_from_file ("layout1.glade");
-GtkWidget *win = GTK_WIDGET(gtk_builder_get_object (builder,"win1"));
-g_signal_connect(win, "destroy",G_CALLBACK(gtk_main_quit),NULL);
+win = GTK_WIDGET(gtk_builder_get_object (builder,"win1"));
+g_signal_connect(win, "destroy",G_CALLBACK(next),NULL);
 gtk_builder_connect_signals(builder, NULL);
 GtkWidget *gid1 = GTK_WIDGET(gtk_builder_get_object (builder,"box1"));
 GtkWidget *top = GTK_WIDGET(gtk_builder_get_object (builder,"top_lb_1"));
@@ -121,9 +137,9 @@ gtk_main ();
 
 int main(int argc, char *argv[])
 {
-win1(argc, argv);
-win2(argc, argv);
-win3_a(argc, argv);
+win1_1(argc, argv);
+//win2(argc, argv);
+//win3_a(argc, argv);
 //win3_b(argc, argv);
 //win3_c(argc, argv);
 //win3_d(argc, argv);
