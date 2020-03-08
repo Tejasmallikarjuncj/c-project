@@ -145,6 +145,7 @@
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
             <property name="draw_indicator">True</property>
+            <property name="group">r1 </property>
           </object>
           <packing>
             <property name="x">13</property>
@@ -160,6 +161,7 @@
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
             <property name="draw_indicator">True</property>
+            <property name="group">r1 </property>
           </object>
           <packing>
             <property name="x">14</property>
@@ -175,6 +177,7 @@
             <property name="can_focus">True</property>
             <property name="receives_default">False</property>
             <property name="draw_indicator">True</property>
+            <property name="group">r1 </property>
           </object>
           <packing>
             <property name="x">14</property>
