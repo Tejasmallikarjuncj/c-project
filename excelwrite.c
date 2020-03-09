@@ -34,11 +34,13 @@ struct atm client[]={
 {6712,5671235,"Lucy","DEMAT",43000,"ICICI"},
 };
 
+void l_sort(struct atm *);
+
 int main()
 {
 lxw_workbook *workbook = workbook_new("atm.xlsx");
 lxw_worksheet *worksheet = workbook_add_worksheet(workbook,NULL);
-
+l_sort(client);
 int row=0;
 int col=0;
 
@@ -54,5 +56,23 @@ worksheet_write_string(worksheet, row, col+5, client[row].bank_name, NULL);
 return workbook_close(workbook);
 }
 
+void l_sort(struct atm *p)
+{
+struct atm temp;
 
-
+for(int i = 1; i < 20; i++)
+{
+int j = i;
+if((p + i)->pin < (p -1 + i)->pin)
+{
+do
+{
+temp = *(p + j);
+*(p + j) = *(p + j - 1);
+*(p + j -1) = temp;
+if(j != 1)
+j--;
+}while((p+j)->pin < (p -1 +j)->pin);
+}
+}
+}
