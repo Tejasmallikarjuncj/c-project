@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "xlsxwriter.h"
+#include<string.h>
 
 struct atm
 {
@@ -36,11 +37,14 @@ struct atm client[]={
 
 void l_sort(struct atm *);
 
+void change(struct atm *);
+
 int main()
 {
 lxw_workbook *workbook = workbook_new("atm.xlsx");
 lxw_worksheet *worksheet = workbook_add_worksheet(workbook,NULL);
 l_sort(client);
+change(client);
 int row=0;
 int col=0;
 
@@ -73,6 +77,18 @@ temp = *(p + j);
 if(j != 1)
 j--;
 }while((p+j)->pin < (p -1 +j)->pin);
+}
+}
+}
+
+
+void change(struct atm *p)
+{
+for(int i = 0; i < 20; i++)
+{
+if(strcmp(p[i].acc_type,"savings")) 
+{
+strcpy(p[i].acc_type,"savings");
 }
 }
 }
