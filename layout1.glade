@@ -63,8 +63,8 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="tooltip_text" translatable="yes">ENTRY THE PIN</property>
+            <property name="max_width_chars">34</property>
             <property name="primary_icon_tooltip_text" translatable="yes">Entry the pin</property>
-            <property name="input_purpose">pin</property>
           </object>
           <packing>
             <property name="x">98</property>
@@ -401,7 +401,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="tooltip_text" translatable="yes">Enter the amount</property>
-            <property name="input_purpose">number</property>
+            <property name="max_width_chars">63</property>
           </object>
           <packing>
             <property name="x">191</property>
@@ -491,7 +491,7 @@
             <property name="height_request">43</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="input_purpose">pin</property>
+            <property name="max_width_chars">62</property>
           </object>
           <packing>
             <property name="x">165</property>
@@ -504,6 +504,7 @@
             <property name="height_request">45</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="max_width_chars">50</property>
           </object>
           <packing>
             <property name="x">163</property>
@@ -570,7 +571,8 @@
             <property name="height_request">66</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="input_purpose">pin</property>
+            <property name="max_width_chars">55</property>
+            <property name="caps_lock_warning">False</property>
           </object>
           <packing>
             <property name="x">158</property>
@@ -589,6 +591,320 @@
           <packing>
             <property name="x">146</property>
             <property name="y">189</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="wind1">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="boxd1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="bgd1">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="Retry1">
+                <property name="label" translatable="yes">Retry</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Exit1">
+                <property name="label" translatable="yes">Exit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="gd1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="dl1">
+                <property name="width_request">275</property>
+                <property name="height_request">130</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">The entered pin is not matching with 
+card or it is a wrong pin</property>
+                <property name="xalign">0.059999998658895493</property>
+                <property name="yalign">0.11999999731779099</property>
+                <attributes>
+                  <attribute name="scale" value="1.25"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">10</property>
+                <property name="y">12</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="wind2">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="boxd2">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="bgd2">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="Ok2">
+                <property name="label" translatable="yes">Ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="gd2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="dl2">
+                <property name="width_request">275</property>
+                <property name="height_request">130</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Sorry you have reached your max
+entry.Try sometime time later </property>
+                <property name="xalign">0.059999998658895493</property>
+                <property name="yalign">0.11999999731779099</property>
+                <attributes>
+                  <attribute name="scale" value="1.25"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">10</property>
+                <property name="y">12</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="wind3">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="boxd3">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="bgd3">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="Retry3">
+                <property name="label" translatable="yes">Retry</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Exit3">
+                <property name="label" translatable="yes">Exit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="gd3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="dl3">
+                <property name="width_request">275</property>
+                <property name="height_request">130</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Your new pin is matching with
+confirm pin</property>
+                <property name="xalign">0.059999998658895493</property>
+                <property name="yalign">0.11999999731779099</property>
+                <attributes>
+                  <attribute name="scale" value="1.25"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">10</property>
+                <property name="y">12</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkDialog" id="wind4">
+    <property name="can_focus">False</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="boxd4">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="bgd4">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="Retry4">
+                <property name="label" translatable="yes">Retry</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="Exit4">
+                <property name="label" translatable="yes">Exit</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed" id="gd4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="dl4">
+                <property name="width_request">275</property>
+                <property name="height_request">130</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">The entred amount is more than
+your balance</property>
+                <property name="xalign">0.059999998658895493</property>
+                <property name="yalign">0.11999999731779099</property>
+                <attributes>
+                  <attribute name="scale" value="1.25"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">10</property>
+                <property name="y">12</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
           </packing>
         </child>
       </object>
