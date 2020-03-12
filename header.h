@@ -2,65 +2,73 @@
 
 typedef struct client {
 int pin;
-long long int acc_no;
+int acc_no;
 char name[15];
 char acc_type[15];
 float balance;
 char bank_name[15];
-long long int card;
+int card;
 int retrn; 
 }atm;
+
+typedef struct dailog {
+GtkWidget *win;
+GtkWidget *box;
+GtkWidget *grid;
+GtkWidget *b_grid;
+GtkWidget *label;
+GtkWidget *button[2];
+}dail;
 
 typedef struct gui {
 GtkWidget *win;
 GtkWidget *box;
 GtkWidget *label[10];
 GtkWidget *button[3];
-GtkWidget *entry;
-GtkWidget *radio_button[4];
-GtkWidget *dailog_box[4];
+GtkWidget *entry[2];
+GtkToggleButton *radio_button[4];
 }gui;
 
-void win1(int, char* []);
+/*void next(GtkWidget *,gpointer);
 
-void win2(int, char* []);
+void next1(GtkWidget *,gpointer);
 
-void win3_a(int, char* []);
+void next2(GtkWidget *,gpointer);
 
-void win3_b(int, char* []);
+void next3(GtkWidget *,gpointer);
 
-void win3_c(int, char* []);
+void next4(GtkWidget *,gpointer);*/
 
-void win3_d(int, char* []);
+void prev(GtkWidget *,gpointer);
 
-void next1(GtkWiget *,gpointer);
+void submit2(GtkWidget *,gpointer);
 
-void next2(GtkWiget *,gpointer);
+void submit3b(GtkWidget *,gpointer);
 
-void next3(GtkWiget *,gpointer);
+void submit3c(GtkWidget *,gpointer);
 
-void next4(GtkWiget *,gpointer);
+void submit3d(GtkWidget *,gpointer);
 
-void prev(GtkWiget *,gpointer);
+void submit1(GtkWidget *,gpointer);
 
-void submit3a(GtkWiget *,gpointer);
+void dail1f(GtkWidget *,gpointer);
 
-void submit3c(GtkWiget *,gpointer);
+//void dail2f(GtkWidget *,gpointer);
 
-void submit3d(GtkWiget *,gpointer);
+void dail3f(GtkWidget *,gpointer);
 
-atm* load(void);
+void dail4f(GtkWidget *,gpointer);
 
-atm* search(atm *);
+void load(void);
 
-void wrt_bal(long long int);
+int search(int, atm *);
 
-char* typ_int(int);
+int wrt_bal(float, atm *);
 
-char* typ_flt(float);
+int wrt_pin(int, atm *);
 
+void typ_int(int, char *);
 
+void  typ_flt(float, char *);
 
-
-
-
+long long int typ_lld(char *);
