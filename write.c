@@ -2,41 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
 #include "xlsxwriter.h"
-#include <gtk/gtk.h>
 
 extern atm client_pr;
 extern atm p[20];
-
-long long int typ_lld(char *p)
-{
-long long int n = 0;
-int l = strlen(p);
-for(int i = l -1;i > l; i--)
-{
-char b;
-char *a;
-*a = *(p + i);
-int s = atoi(a);
-n += (long long int)s*pow(10,i);
-}
-return n;
-}
-
-void typ_int(int n, char *p)
-{
-char b[32];
-sprintf(b,"%d",n);
-strcpy(p,b);
-}
-
-void typ_flt(float f, char *p)
-{
-char b[32];
-sprintf(b,"%.2f",f);
-strcpy(p,b);
-}
 
 int wrt_bal(float f, atm *c)
 {

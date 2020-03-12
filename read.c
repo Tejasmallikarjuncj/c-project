@@ -32,13 +32,13 @@ case 2:
 	strcpy(p[row].name,var);
 	break;
 case 3:
-	p[row].balance = (float)atoi(var);
+	strcpy(p[row].acc_type,var);
 	break;
 case 4:
-	strcpy(p[row].bank_name,var);
+	p[row].balance = (float)atoi(var);
 	break;
 case 5:
-	p[row].card = atoi(var);
+	strcpy(p[row].bank_name,var);
 	break;	
 }
 cell ++;
@@ -46,7 +46,7 @@ cell ++;
 row ++;
 }
 xlsxioread_sheet_close(sheet);
-//xlsxioread_close(xlsxioread);
+xlsxioread_close(xlsxioread);
 }
 
 int search(int d, atm* c)
