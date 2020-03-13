@@ -23,7 +23,7 @@ extern atm p[20];
 
 void submit1(GtkWidget * wid,gpointer ptr)
 {
-char* a;
+char a[10];
 const char *b = gtk_entry_get_text(GTK_ENTRY(pg1.entry[0]));
 sprintf(a,"%s",b);
 int pin = atoi(a);
@@ -100,15 +100,15 @@ pg3a.label[4] = GTK_WIDGET(gtk_builder_get_object (builder,"name"));
 const char *temp3 = client_pr.name;
 gtk_label_set_text(GTK_LABEL(pg3a.label[4]), temp3);
 pg3a.label[5]  = GTK_WIDGET(gtk_builder_get_object (builder,"account no"));
-char *c;
+char c[15];
 const char *temp1;
 sprintf(c,"%d", client_pr.acc_no);
 temp1 = c;  
 gtk_label_set_text(GTK_LABEL(pg3a.label[5]), temp1);
 pg3a.label[6] = GTK_WIDGET(gtk_builder_get_object (builder,"bal"));
-char *b;
+char b[15];
 const char *temp2; 
-sprintf(b,"%.2f",client_pr.balance);
+sprintf(b,"%f",client_pr.balance);
 temp2 = b;
 gtk_label_set_text(GTK_LABEL(pg3a.label[6]), temp2);
 pg3a.button[0] = GTK_WIDGET(gtk_builder_get_object (builder,"Prev_1"));

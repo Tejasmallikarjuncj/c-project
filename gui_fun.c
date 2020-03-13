@@ -40,12 +40,12 @@ void submit2(GtkWidget * wid,gpointer ptr)
 if(gtk_toggle_button_get_active(pg2.radio_button[0]))
 {
 gtk_widget_hide(pg2.win);
-gtk_widget_show(pg3a.win);
+gtk_widget_show(pg3b.win);
 }
 else if(gtk_toggle_button_get_active (pg2.radio_button[1]))
 {
 gtk_widget_hide(pg2.win);
-gtk_widget_show(pg3b.win);
+gtk_widget_show(pg3a.win);
 }
 else if(gtk_toggle_button_get_active (pg2.radio_button[2]))
 {
@@ -67,11 +67,11 @@ gtk_widget_show(pg2.win);
 
 void submit3b(GtkWidget * wid,gpointer ptr)
 {
-char* temp1;
+char temp1[15];
 const char* temp2; 
 temp2 = gtk_entry_get_text(GTK_ENTRY(pg3b.entry[0]));
 sprintf(temp1,"%s", temp2);
-if((float)atoi(temp1) > (float)client_pr.balance)
+if(atoi(temp1) > (int)client_pr.balance)
 {
 gtk_widget_show(dail4.win);
 }
@@ -90,13 +90,13 @@ gtk_widget_show(pg2.win);
 void submit3c(GtkWidget * wid,gpointer ptr)
 {
 int pin1,pin2;
-char* temp1;
+char temp1[15];
 const char* temp2; 
 temp2 = gtk_entry_get_text(GTK_ENTRY(pg3b.entry[0]));
 sprintf(temp1,"%s", temp2);
 pin1 = atoi(temp1);
 
-char* temp3;
+char temp3[10];
 const char* temp4; 
 temp4 = gtk_entry_get_text(GTK_ENTRY(pg3b.entry[0]));
 sprintf(temp3,"%s", temp4);
@@ -127,7 +127,7 @@ gtk_widget_show(pg2.win);
 
 void submit3d(GtkWidget * wid,gpointer ptr)
 {
-char* temp1;
+char temp1[15];
 const char* temp2; 
 temp2 = gtk_entry_get_text(GTK_ENTRY(pg3d.entry[0]));
 sprintf(temp1,"%s", temp2);
