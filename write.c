@@ -34,14 +34,13 @@ worksheet_write_number(worksheet, row, col+4, p[row].balance, NULL);
 worksheet_write_string(worksheet, row, col+5, p[row].bank_name, NULL);
 }
 return workbook_close(workbook);
-load();
 }
 
 int wrt_pin(int d, atm *c)
 {
 for(int i = 0;i < 20; i++)
 {
-if(!(c->name,p[i].name))
+if(strcmp(c->name,p[i].name) == 0)
 {
 p[i].pin = d;
 break;
@@ -64,5 +63,4 @@ worksheet_write_number(worksheet, row, col+4, p[row].balance, NULL);
 worksheet_write_string(worksheet, row, col+5, p[row].bank_name, NULL);
 }
 return workbook_close(workbook);
-load();
 }

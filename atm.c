@@ -31,7 +31,7 @@ int s = search(pin, &client_pr);
 if(s == 0)
 {
 count ++;
-if(count > 5)
+if(count < 5)
 {
 gtk_widget_hide(pg1.win);
 gtk_widget_show(dail1.win);
@@ -74,13 +74,13 @@ g_signal_connect(pg2.win,"destroy",G_CALLBACK(gtk_main_quit),NULL);
 //gtk_builder_connect_signals(builder, NULL);
 pg2.box = GTK_WIDGET(gtk_builder_get_object (builder,"box2"));
 pg2.label[0] = GTK_WIDGET(gtk_builder_get_object (builder,"top_lb_2"));
-pg2.radio_button[0] = (GtkToggleButton *)gtk_builder_get_object (builder,"r1");
+pg2.radio_button[0] = GTK_TOGGLE_BUTTON(gtk_builder_get_object (builder,"r1"));
 //g_signal_connect(pg2.radio_button[0],"toggled",G_CALLBACK(next1),NULL);
-pg2.radio_button[1] = (GtkToggleButton *)gtk_builder_get_object (builder,"r2");
+pg2.radio_button[1] = GTK_TOGGLE_BUTTON(gtk_builder_get_object (builder,"r2"));
 //g_signal_connect(pg2.radio_button[1],"toggled",G_CALLBACK(next2),NULL);
-pg2.radio_button[2] = (GtkToggleButton *)gtk_builder_get_object (builder,"r3");
+pg2.radio_button[2] = GTK_TOGGLE_BUTTON(gtk_builder_get_object (builder,"r3"));
 //g_signal_connect(pg2.radio_button[2],"toggled",G_CALLBACK(next3),NULL);
-pg2.radio_button[3]= (GtkToggleButton *)gtk_builder_get_object (builder,"r4");
+pg2.radio_button[3]= GTK_TOGGLE_BUTTON(gtk_builder_get_object (builder,"r4"));
 //g_signal_connect(pg2.radio_button[3],"toggled",G_CALLBACK(next4),NULL);
 pg2.button[0] = GTK_WIDGET(gtk_builder_get_object (builder,"ext_1"));
 g_signal_connect(pg2.button[0], "clicked",G_CALLBACK(gtk_main_quit),NULL);
@@ -97,20 +97,20 @@ pg3a.label[1] = GTK_WIDGET(gtk_builder_get_object (builder,"name_1"));
 pg3a.label[2] = GTK_WIDGET(gtk_builder_get_object (builder,"bal_1"));
 pg3a.label[3] = GTK_WIDGET(gtk_builder_get_object (builder,"Account_2"));
 pg3a.label[4] = GTK_WIDGET(gtk_builder_get_object (builder,"name"));
-const char *temp3 = client_pr.name;
-gtk_label_set_text(GTK_LABEL(pg3a.label[4]), temp3);
+/*const char *temp3 = client_pr.name;
+gtk_label_set_text(GTK_LABEL(pg3a.label[4]), temp3);*/
 pg3a.label[5]  = GTK_WIDGET(gtk_builder_get_object (builder,"account no"));
-char c[15];
+/*char c[15];
 const char *temp1;
 sprintf(c,"%d", client_pr.acc_no);
 temp1 = c;  
-gtk_label_set_text(GTK_LABEL(pg3a.label[5]), temp1);
+gtk_label_set_text(GTK_LABEL(pg3a.label[5]), temp1);*/
 pg3a.label[6] = GTK_WIDGET(gtk_builder_get_object (builder,"bal"));
-char b[15];
+/*char b[15];
 const char *temp2; 
 sprintf(b,"%f",client_pr.balance);
 temp2 = b;
-gtk_label_set_text(GTK_LABEL(pg3a.label[6]), temp2);
+gtk_label_set_text(GTK_LABEL(pg3a.label[6]), temp2);*/
 pg3a.button[0] = GTK_WIDGET(gtk_builder_get_object (builder,"Prev_1"));
 g_signal_connect(pg3a.button[0],"clicked",G_CALLBACK(prev),NULL);
 pg3a.button[1] = GTK_WIDGET(gtk_builder_get_object (builder,"ext_2"));
@@ -185,7 +185,7 @@ dail3.box = GTK_WIDGET(gtk_builder_get_object (builder,"boxd3"));
 dail3.grid = GTK_WIDGET(gtk_builder_get_object (builder,"gd3"));
 dail3.b_grid = GTK_WIDGET(gtk_builder_get_object (builder,"bgd3"));
 dail3.label = GTK_WIDGET(gtk_builder_get_object (builder,"dl3"));
-dail3.button[0] = GTK_WIDGET(gtk_builder_get_object (builder,"Ok3"));
+dail3.button[0] = GTK_WIDGET(gtk_builder_get_object (builder,"Retry3"));
 g_signal_connect(dail3.button[0],"clicked",G_CALLBACK(dail3f),NULL);
 dail3.button[1] = GTK_WIDGET(gtk_builder_get_object (builder,"Exit3"));
 g_signal_connect(dail3.button[1],"clicked",G_CALLBACK(gtk_main_quit),NULL);
@@ -206,5 +206,3 @@ g_signal_connect(dail4.button[1],"clicked",G_CALLBACK(gtk_main_quit),NULL);
 gtk_widget_show(pg1.win);
 gtk_main ();
 }
-
-
